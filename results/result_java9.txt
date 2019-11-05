@@ -1,0 +1,93 @@
+# JMH version: 1.21
+# VM version: JDK 9.0.4, Java HotSpot(TM) 64-Bit Server VM, 9.0.4+11
+# VM invoker: C:\Program Files\Java\jdk-9.0.4\bin\java.exe
+# VM options: <none>
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: eu.happycoders.string2int.StringToIntMultiBenchmark.integerParsePositiveInt
+
+# Run progress: 0,00% complete, ETA 00:08:20
+# Fork: 1 of 5
+# Warmup Iteration   1: 22137721,490 ops/s
+# Warmup Iteration   2: 22589493,199 ops/s
+# Warmup Iteration   3: 22489978,848 ops/s
+# Warmup Iteration   4: 22406198,449 ops/s
+# Warmup Iteration   5: 22505704,782 ops/s
+Iteration   1: 22552192,121 ops/s
+Iteration   2: 22456002,657 ops/s
+Iteration   3: 22320083,877 ops/s
+Iteration   4: 22484607,745 ops/s
+Iteration   5: 22508289,237 ops/s
+
+# Run progress: 20,00% complete, ETA 00:06:41
+# Fork: 2 of 5
+# Warmup Iteration   1: 22265475,899 ops/s
+# Warmup Iteration   2: 22550811,950 ops/s
+# Warmup Iteration   3: 22599775,527 ops/s
+# Warmup Iteration   4: 22482934,928 ops/s
+# Warmup Iteration   5: 22489960,163 ops/s
+Iteration   1: 22633125,525 ops/s
+Iteration   2: 22601463,238 ops/s
+Iteration   3: 22391045,363 ops/s
+Iteration   4: 22580067,599 ops/s
+Iteration   5: 22606531,669 ops/s
+
+# Run progress: 40,00% complete, ETA 00:05:01
+# Fork: 3 of 5
+# Warmup Iteration   1: 22232104,589 ops/s
+# Warmup Iteration   2: 22549853,622 ops/s
+# Warmup Iteration   3: 22743395,241 ops/s
+# Warmup Iteration   4: 22491353,920 ops/s
+# Warmup Iteration   5: 22411392,651 ops/s
+Iteration   1: 22724390,024 ops/s
+Iteration   2: 22799919,167 ops/s
+Iteration   3: 22719907,903 ops/s
+Iteration   4: 22763683,640 ops/s
+Iteration   5: 22790169,270 ops/s
+
+# Run progress: 60,00% complete, ETA 00:03:20
+# Fork: 4 of 5
+# Warmup Iteration   1: 22104613,492 ops/s
+# Warmup Iteration   2: 22510069,357 ops/s
+# Warmup Iteration   3: 22718121,693 ops/s
+# Warmup Iteration   4: 22690294,699 ops/s
+# Warmup Iteration   5: 22701760,354 ops/s
+Iteration   1: 22577203,235 ops/s
+Iteration   2: 22776265,096 ops/s
+Iteration   3: 22765671,655 ops/s
+Iteration   4: 22422471,422 ops/s
+Iteration   5: 22694141,880 ops/s
+
+# Run progress: 80,00% complete, ETA 00:01:40
+# Fork: 5 of 5
+# Warmup Iteration   1: 22157333,431 ops/s
+# Warmup Iteration   2: 22533053,198 ops/s
+# Warmup Iteration   3: 22430223,076 ops/s
+# Warmup Iteration   4: 22531166,581 ops/s
+# Warmup Iteration   5: 22492019,242 ops/s
+Iteration   1: 22343346,064 ops/s
+Iteration   2: 22474607,134 ops/s
+Iteration   3: 22428455,962 ops/s
+Iteration   4: 22528054,629 ops/s
+Iteration   5: 22561238,771 ops/s
+
+
+Result "eu.happycoders.string2int.StringToIntMultiBenchmark.integerParsePositiveInt":
+  22580117,395 ±(99.9%) 109015,073 ops/s [Average]
+  (min, avg, max) = (22320083,877, 22580117,395, 22799919,167), stdev = 145532,004
+  CI (99.9%): [22471102,322, 22689132,469] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:08:21
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                           Mode  Cnt         Score        Error  Units
+StringToIntMultiBenchmark.integerParsePositiveInt  thrpt   25  22580117,395 ± 109015,073  ops/s
