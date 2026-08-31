@@ -6,3 +6,4 @@ target
 **/gitignore
 *.iml
 *.class
+dependency-reduced-pom.xml
