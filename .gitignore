@@ -7,3 +7,8 @@ target
 *.iml
 *.class
 dependency-reduced-pom.xml
+# The JSON/logs of a series run. The measurements the articles rely on live
+# in the website repository (data/benchmarks/<machine>/); the tracked
+# result_java*.txt files are the 2019 record the articles link to.
+results/java*.json
+results/java*.txt

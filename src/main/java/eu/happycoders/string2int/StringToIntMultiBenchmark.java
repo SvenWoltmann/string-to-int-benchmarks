@@ -1,72 +1,55 @@
 package eu.happycoders.string2int;
 
-import org.openjdk.jmh.annotations.*;
+import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.infra.Blackhole;
-
-import java.util.concurrent.ThreadLocalRandom;
 
 public class StringToIntMultiBenchmark {
 
-    @State(Scope.Thread)
-    public static class MyState {
-        String pos;
-        String posWithPlus;
-        String neg;
-
-        @Setup(Level.Invocation)
-        public void doSetup() {
-            // always 7-digits, so that the String always has the same length
-            pos = "" + (1_000_000 + ThreadLocalRandom.current().nextInt(9_000_000));
-            posWithPlus = "+" + pos;
-            neg = "-" + pos;
-        }
-    }
-
     @Benchmark
-    public void integerParsePositiveInt(MyState state, Blackhole blackhole) {
-        int i = Integer.parseInt(state.pos);
+    public void integerParsePositiveInt(RandomNumberStrings state, Blackhole blackhole) {
+        int i = Integer.parseInt(state.positive(state.next()));
         blackhole.consume(i);
     }
 
     @Benchmark
-    public void integerParsePositiveIntWithPlus(MyState state, Blackhole blackhole) {
-        int i = Integer.parseInt(state.posWithPlus);
+    public void integerParsePositiveIntWithPlus(RandomNumberStrings state, Blackhole blackhole) {
+        int i = Integer.parseInt(state.positiveWithPlus(state.next()));
         blackhole.consume(i);
     }
 
     @Benchmark
-    public void integerParseNegativeInt(MyState state, Blackhole blackhole) {
-        int i = Integer.parseInt(state.neg);
+    public void integerParseNegativeInt(RandomNumberStrings state, Blackhole blackhole) {
+        int i = Integer.parseInt(state.negative(state.next()));
         blackhole.consume(i);
     }
 
     @Benchmark
-    public void integerParseUnsignedInt(MyState state, Blackhole blackhole) {
-        int i = Integer.parseUnsignedInt(state.pos);
+    public void integerParseUnsignedInt(RandomNumberStrings state, Blackhole blackhole) {
+        int i = Integer.parseUnsignedInt(state.positive(state.next()));
         blackhole.consume(i);
     }
 
     @Benchmark
-    public void integerParseUnsignedIntWithPlus(MyState state, Blackhole blackhole) {
-        int i = Integer.parseUnsignedInt(state.posWithPlus);
+    public void integerParseUnsignedIntWithPlus(RandomNumberStrings state, Blackhole blackhole) {
+        int i = Integer.parseUnsignedInt(state.positiveWithPlus(state.next()));
         blackhole.consume(i);
     }
 
     @Benchmark
-    public void integerParsePositiveIntAndBox(MyState state, Blackhole blackhole) {
-        Integer i = Integer.parseInt(state.pos);
+    public void integerParsePositiveIntAndBox(RandomNumberStrings state, Blackhole blackhole) {
+        Integer i = Integer.parseInt(state.positive(state.next()));
         blackhole.consume(i);
     }
 
     @Benchmark
-    public void integerParsePositiveInteger(MyState state, Blackhole blackhole) {
-        Integer i = Integer.valueOf(state.pos);
+    public void integerParsePositiveInteger(RandomNumberStrings state, Blackhole blackhole) {
+        Integer i = Integer.valueOf(state.positive(state.next()));
         blackhole.consume(i);
     }
 
     @Benchmark
-    public void integerParsePositiveIntegerAndUnbox(MyState state, Blackhole blackhole) {
-        int i = Integer.valueOf(state.pos);
+    public void integerParsePositiveIntegerAndUnbox(RandomNumberStrings state, Blackhole blackhole) {
+        int i = Integer.valueOf(state.positive(state.next()));
         blackhole.consume(i);
     }
 
