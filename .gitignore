@@ -12,3 +12,4 @@ dependency-reduced-pom.xml
 # result_java*.txt files are the 2019 record the articles link to.
 results/java*.json
 results/java*.txt
+.DS_Store
